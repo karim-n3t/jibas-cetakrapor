@@ -1,0 +1,2243 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <link rel="apple-touch-icon" sizes="76x76" href="http://draft.intrabw.net/assets/img/apple-icon.png">
+      <link rel="icon" type="image/png" href="http://draft.intrabw.net/assets/img/icon_binawiyata.png">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>
+         Raport | Aplikasi SMK Binawiyata Sragen
+      </title>
+      <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+      <link rel="stylesheet" type="text/css" href="http://draft.intrabw.net/assets/css/normalize.css" />
+      <!--     Fonts and icons     -->
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+      <!-- CSS Files -->
+      <link href="http://draft.intrabw.net/assets/css/material-dashboard.min.css?v=2.1.0" rel="stylesheet" />
+      <!-- CSS Just for demo purpose, don't include it in your project -->
+      <link href="http://draft.intrabw.net/assets/demo/demo.css" rel="stylesheet" />
+      <!-- css yang digunakan ketika dalam mode screen -->
+      <link href="http://draft.intrabw.net/assets/css/style.css" rel="stylesheet">
+      <!-- ss yang digunakan tampilkan ketika dalam mode print -->
+      <link href="http://draft.intrabw.net/assets/css/cetakraport.css" rel="stylesheet">
+      <style type="text/css" media="print">
+         @page  {
+         size: 210mm 297mm;
+         /* auto is the initial value */
+         margin: 10mm 15mm 8mm 15mm;
+         /* this affects the margin in the printer settings t,r,b,l */
+         }
+         @media  print {
+         footer {
+         page-break-after: always;
+         }
+         }
+      </style>
+   </head>
+   <body class="">
+      <div class="wrapper ">
+         <div class="sidebar" data-color="azure" data-background-color="white" data-image="http://draft.intrabw.net/assets/img/sidebar-1.jpg">
+            <div class="logo">
+               <a href="#" class="simple-text logo-mini">
+               BT
+               </a>
+               <a href="#" class="simple-text logo-normal">
+               Binawiyata Team
+               </a>
+            </div>
+            <div class="sidebar-wrapper">
+               <div class="user">
+                  <div class="photo">
+                     <img src="http://draft.intrabw.net/assets/img/logo/karim.jpg" alt="user"/>
+                  </div>
+                  <div class="user-info">
+                     <a data-toggle="collapse" href="#collapseExample" class="username">
+                     <span>
+                     Fathul Karim
+                     <b class="caret"></b>
+                     </span>
+                     </a>
+                     <div class="collapse" id="collapseExample">
+                        <ul class="nav">
+                           <li class="nav-item">
+                              <a class="nav-link" href="#">
+                              <span class="sidebar-mini"> MP </span>
+                              <span class="sidebar-normal"> My Profile </span>
+                              </a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="#">
+                              <span class="sidebar-mini"> EP </span>
+                              <span class="sidebar-normal"> Edit Profile </span>
+                              </a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="#">
+                              <span class="sidebar-mini"> S </span>
+                              <span class="sidebar-normal"> Settings </span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <ul class="nav">
+                  <li class="nav-item">
+                     <a class="nav-link" href="http://draft.intrabw.net">
+                        <i class="material-icons">dashboard</i>
+                        <p> Dashboard </p>
+                     </a>
+                  </li>
+                  <li class="nav-item ">
+                     <a class="nav-link" data-toggle="collapse" href="#menuPresensi">
+                        <i class="material-icons">date_range</i>
+                        <p> Presensi
+                           <b class="caret"></b>
+                        </p>
+                     </a>
+                     <div class="collapse" id="menuPresensi">
+                        <ul class="nav">
+                           <li class="nav-item ">
+                              <a class="nav-link" href="http://draft.intrabw.net/PresensiHarian">
+                              <span class="sidebar-mini"> PH </span>
+                              <span class="sidebar-normal"> Harian </span>
+                              </a>
+                           </li>
+                           <li class="nav-item ">
+                              <a class="nav-link" href="http://draft.intrabw.net/PresensiRekap">
+                              <span class="sidebar-mini"> PR </span>
+                              <span class="sidebar-normal"> Rekap </span>
+                              </a>
+                           </li>
+                           <li class="nav-item ">
+                              <a class="nav-link" href="http://draft.intrabw.net/PresensiPerorangan">
+                              <span class="sidebar-mini"> PP </span>
+                              <span class="sidebar-normal"> Perorangan </span>
+                              </a>
+                           </li>
+                           <li class="nav-item ">
+                              <a class="nav-link" href="http://draft.intrabw.net/PresensiPengaturan">
+                              <span class="sidebar-mini"> PS </span>
+                              <span class="sidebar-normal"> Pengaturan </span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="nav-item ">
+                     <a class="nav-link" data-toggle="collapse" href="#menuRaport">
+                        <i class="material-icons">grid_on</i>
+                        <p> Raport
+                           <b class="caret"></b>
+                        </p>
+                     </a>
+                     <div class="collapse" id="menuRaport">
+                        <ul class="nav">
+                           <li class="nav-item ">
+                              <a class="nav-link" href="http://draft.intrabw.net/Raport">
+                              <span class="sidebar-mini"> RT </span>
+                              <span class="sidebar-normal"> Raport Semester </span>
+                              </a>
+                           </li>
+                           <li class="nav-item ">
+                              <a class="nav-link" href="http://draft.intrabw.net/Raport">
+                              <span class="sidebar-mini"> ET </span>
+                              <span class="sidebar-normal"> Pengaturan Raport </span>
+                              </a>
+                           </li>
+                           <li class="nav-item ">
+                              <a class="nav-link" href="http://draft.intrabw.net/examples/tables/datatables.net.html">
+                              <span class="sidebar-mini"> DT </span>
+                              <span class="sidebar-normal"> DataTables.net </span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="nav-item ">
+                     <a class="nav-link" data-toggle="collapse" href="#menuPPDB">
+                        <i class="material-icons">grid_on</i>
+                        <p> PPDB
+                           <b class="caret"></b>
+                        </p>
+                     </a>
+                     <div class="collapse" id="menuPPDB">
+                        <ul class="nav">
+                           <li class="nav-item ">
+                              <a class="nav-link" href="http://draft.intrabw.net/Raport">
+                              <span class="sidebar-mini"> RT </span>
+                              <span class="sidebar-normal"> Laporan Sementara </span>
+                              </a>
+                           </li>
+                           <li class="nav-item ">
+                              <a class="nav-link" href="http://draft.intrabw.net/Raport">
+                              <span class="sidebar-mini"> ET </span>
+                              <span class="sidebar-normal"> Raport Draft </span>
+                              </a>
+                           </li>
+                           <li class="nav-item ">
+                              <a class="nav-link" href="http://draft.intrabw.net/examples/tables/datatables.net.html">
+                              <span class="sidebar-mini"> DT </span>
+                              <span class="sidebar-normal"> DataTables.net </span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="nav-item ">
+                     <a class="nav-link" href="http://draft.intrabw.net/examples/widgets.html">
+                        <i class="material-icons">widgets</i>
+                        <p> Widgets </p>
+                     </a>
+                  </li>
+                  <li class="nav-item ">
+                     <a class="nav-link" href="http://draft.intrabw.net/examples/charts.html">
+                        <i class="material-icons">timeline</i>
+                        <p> Charts </p>
+                     </a>
+                  </li>
+                  <li class="nav-item ">
+                     <a class="nav-link" href="http://draft.intrabw.net/examples/calendar.html">
+                        <i class="material-icons">date_range</i>
+                        <p> Calendar </p>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+               <div class="container-fluid">
+                  <div class="navbar-wrapper">
+                     <div class="navbar-minimize">
+                        <button id="minimizeSidebar" class="btn btn-just-icon btn-white btn-fab btn-round">
+                        <i class="material-icons text_align-center visible-on-sidebar-regular">more_vert</i>
+                        <i class="material-icons design_bullet-list-67 visible-on-sidebar-mini">view_list</i>
+                        </button>
+                     </div>
+                     <a class="navbar-brand" href="#pablo">Dashboard</a>
+                  </div>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="navbar-toggler-icon icon-bar"></span>
+                  <span class="navbar-toggler-icon icon-bar"></span>
+                  <span class="navbar-toggler-icon icon-bar"></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-end">
+                     <form class="navbar-form">
+                        <div class="input-group no-border">
+                           <input type="text" value="" class="form-control" placeholder="Search...">
+                           <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                           <i class="material-icons">search</i>
+                           </button>
+                        </div>
+                     </form>
+                     <ul class="navbar-nav">
+                        <li class="nav-item">
+                           <a class="nav-link" href="#pablo">
+                              <i class="material-icons">dashboard</i>
+                              <p class="d-lg-none d-md-block">
+                                 Stats
+                              </p>
+                           </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                           <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="material-icons">notifications</i>
+                              <span class="notification">5</span>
+                              <p class="d-lg-none d-md-block">
+                                 Some Actions
+                              </p>
+                           </a>
+                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                              <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                              <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                              <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                              <a class="dropdown-item" href="#">Another Notification</a>
+                              <a class="dropdown-item" href="#">Another One</a>
+                           </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                           <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="material-icons">person</i>
+                              <p class="d-lg-none d-md-block">
+                                 Account
+                              </p>
+                           </a>
+                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                              <a class="dropdown-item" href="#">Profile</a>
+                              <a class="dropdown-item" href="#">Settings</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Log out</a>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="content">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="card">
+                           <div class="card-header card-header-icon card-header-rose">
+                              <div class="card-icon">
+                                 <i class="material-icons">assignment</i>
+                              </div>
+                              <h4 class="card-title">
+                                 Daftar Kelas Tahun Ajaran 2020/2021 Semetser Ganjil
+                              </h4>
+                           </div>
+                           <div class="card-body d-none d-print-block print" id="printSekolah">
+                              <div>
+                                 <br style="display: block;content: '';margin: 50px 0;">
+                                 <h3 class="text-uppercase font-weight-bold text-center">
+                                    Rapor Peserta Didik<br>Sekolah Menengah Kejuruan<br>(SMK)
+                                 </h3>
+                                 <br style="display: block;content: '';margin: 50px 0;">
+                                 <table class="table-borderless">
+                                    <tbody style="font-size:x-large !important; line-height:3 !important;">
+                                       <tr>
+                                          <td class="pl-5"></td>
+                                          <td class="pl-5">
+                                             <h3 style="font-size:x-large !important; line-height:3 !important;">
+                                                Sekolah<br>
+                                                NPSN / NSS<br>
+                                                Alamat<br>
+                                                <br>
+                                                Kelurahan<br>
+                                                Kecamatan<br>
+                                                Kota/Kabupaten<br>
+                                                Provinsi<br>
+                                                Website<br>
+                                                Email<br>
+                                             </h3>
+                                          </td>
+                                          <td class="pl-5">
+                                             <h3 style="font-size:x-large !important; line-height:3 !important;">
+                                                :<br>
+                                                :<br>
+                                                :<br>
+                                                <br>
+                                                :<br>
+                                                :<br>
+                                                :<br>
+                                                :<br>
+                                                :<br>
+                                                :<br>
+                                             </h3>
+                                          </td>
+                                          <td class="pl-3">
+                                             <h3 style="font-size:x-large !important; line-height:3 !important;">
+                                                SMK Binawiyata Karangmalang Sragen<br>
+                                                20313038 / 322031409002<br>
+                                                Jl. Abimanyu No. 18 Taman Asri<br>
+                                                Kode Pos 57221 Telp. 0271-891818<br>
+                                                Kroyo<br>
+                                                Karangmalang<br>
+                                                Kab. Sragen<br>
+                                                Jawa Tengah<br>
+                                                www.smkbinawiyatasragen.sch.id<br>
+                                                smkbw_srg@yahoo.com
+                                             </h3>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                           <div class="card-body d-none d-print-block print" id="printBiodata">
+                              <div>
+                                 <h3 class="text-uppercase font-weight-bold text-center">Petunjuk Pengisian</h3>
+                                 <br style="display: block;content: '';margin: 50px 0;">
+                                 <table class="table-borderless" style="font-size:large; font-weight:normal; line-height:2;">
+                                    <tbody>
+                                       <tr>
+                                          <td class="pl-5">
+                                             1.<br><br>
+                                             2.<br><br>
+                                             3.<br>
+                                             4.<br>
+                                             5.<br><br>
+                                             6.<br><br>
+                                             7.<br>
+                                             8.<br>
+                                             9.<br>
+                                             10.<br><br>
+                                             11.<br>
+                                             12.<br><br>
+                                             13.<br><br>
+                                             14.<br><br><br>
+                                             15.<br><br><br>
+                                             16.<br><br>
+                                             17.<br><br><br><br><br><br><br><br>
+                                          </td>
+                                          <td class="pl-4 pr-5">
+                                             Rapor merupakan ringkasan hasil penilaian terhadap seluruh aktivitas pembelajaran yang dilakukan peserta didik dalam kurun waktu tertentu;<br>
+                                             Rapor dipergunakan selama peserta didik yang bersangkutan mengikuti seluruh program pembelajaran di Sekolah Menengah Kejuruan tersebut;<br>
+                                             Identitas Sekolah diisi dengan data yang sesuai dengan keberadaan Sekolah Menengah Kejuruan;<br>
+                                             Keterangan tentang diri Peserta didik diisi lengkap sesuai ijazah sebelumnya atau akta kelahiran;<br>
+                                             Rapor harus dilengkapi dengan pas foto berwarna dengan latar belakang merah (3 x 4) serta menggunakan baju putih seragam dan pengisiannya dilakukan oleh Wali Kelas;<br>
+                                             Capaian peserta didik dalam kompetensi pengetahuan dan kompetensi keterampilan ditulis dalam bentuk angka dan predikat untuk masing-masing mata pelajaran;<br>
+                                             Predikat ditulis dalam bentuk huruf sesuai kriteria;<br>
+                                             Catatan akademik ditulis dengan kalimat positif sesuai capaian yang diperoleh peserta didik;<br>
+                                             Penjelasan lebihh detail mengenai capaian kompetensi peserta didik dapat dilihat pada leger;<br>
+                                             Laporan Praktik Kerja Lapangan diisi berdasarkan kegiatan praktik kerja yang diikuti oleh peserta didik di industri/perusahaan mitra;<br>
+                                             Laporan Ekstrakurikuler diisi berdasarkan kegiatan ekstrakurikuler yang diikuti oleh peserta didik;<br>
+                                             Ketidakhadiran diisi dengan data akumulasi ketidakhadiran peserta didik karena sakit, izin, atau tanpa keterangan selama satu semester;<br>
+                                             Keterangan kenaikan kelas diisi dengan putusan apakah peserta didik naik kelas yang ditentukan melalui rapat dewan guru;<br>
+                                             Deskripsi perkembangan karakter diisi dengan simpulan perkembangan peserta didik terkait penumbuhan karakter baik yang dilakukan secara terprogram oleh sekolah maupun yang muncul secara spontan dari peserta didik;<br>
+                                             Catatan perkembangan karakter diisikan hal-hal yang tidak tercantum pada deskripsi perkembangan karakter termasuk prestasi yang diraih peserta didik pada semester berjalan dari perkembangan karakter peserta didik pada semester berjalan jika dikomparasi dengan semester sebelumnya;<br>
+                                             Keterangan pindah keluar sekolah diisi dengan alasan kepindahan. Sedangkan pindah masuk diisi dengan sekolah asal;<br>
+                                             Predikat capaian kompetensi :<br>
+                                             <table class="tabel text-center" style="line-height:22px;">
+                                                <tr class="pl-5 pr-5 font-weight-bold" style="line-height:30px;">
+                                                   <td>Predikat/Kategori</td>
+                                                   <td>Mapel Adaptif dan Normatif</td>
+                                                   <td>Mapel Produktif</td>
+                                                </tr>
+                                                <tr>
+                                                   <td>A+</td>
+                                                   <td>&ge; 95</td>
+                                                   <td>&ge; 95</td>
+                                                </tr>
+                                                <tr>
+                                                   <td>A</td>
+                                                   <td>90 - 94</td>
+                                                   <td>90 - 94</td>
+                                                </tr>
+                                                <tr>
+                                                   <td>A-</td>
+                                                   <td>85 - 89</td>
+                                                   <td>85 - 89</td>
+                                                </tr>
+                                                <tr>
+                                                   <td>B+</td>
+                                                   <td>80 - 84</td>
+                                                   <td>80 - 84</td>
+                                                </tr>
+                                                <tr>
+                                                   <td>B</td>
+                                                   <td>75 - 79</td>
+                                                   <td>75 - 79</td>
+                                                </tr>
+                                                <tr>
+                                                   <td>B-</td>
+                                                   <td>70 - 74</td>
+                                                   <td>70 - 74</td>
+                                                </tr>
+                                                <tr>
+                                                   <td>C</td>
+                                                   <td>60 - 69</td>
+                                                   <td>65 - 69</td>
+                                                </tr>
+                                                <tr>
+                                                   <td>D</td>
+                                                   <td>&lt; 60</td>
+                                                   <td>&lt; 65</td>
+                                                </tr>
+                                             </table>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                 <div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="card-body print" id="printMe">
+                              <table class="table-borderless siswa" style="color:black" width="100%">
+                                 <tbody>
+                                    <tr>
+                                       <td width="20%">
+                                          Departemen<br>Tahun ajaran<br>Semester<br>Tanggal presensi
+                                       </td>
+                                       <td width="40%">
+                                          : SMK <br>: 2020/2021<br>: Ganjil<br>: 2020-07-13 sampai 2020-12-18
+                                       </td>
+                                       <td>
+                                          <button class="btn btn-sm btn-outline-info" onclick="printDiv('printSekolah')">
+                                          <i class="material-icons">insert_drive_file</i> Sekolah
+                                          </button>
+                                          <button class="btn btn-sm btn-outline-success" onclick="printDiv('printBiodata')">
+                                          <i class="material-icons">person</i> Petunjuk Pengisian
+                                          </button>
+                                          <button class="btn btn-sm btn-outline-warning" onclick="printDiv('printRaport')">
+                                          <i class="material-icons">print</i> Raport
+                                          </button>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <hr style="border: 1px solid black">
+                              <div class="table-responsive">
+                                 <table class="table">
+                                    <thead>
+                                       <tr>
+                                          <th class="text-center">No</th>
+                                          <th class="text-center">Tingkat</th>
+                                          <th class="text-center">Kelas</th>
+                                          <th class="text-center">Wali Kelas</th>
+                                          <th class="text-center">Keterangan</th>
+                                          <th class="action text-center d-none d-md-block">Aksi</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <td class="text-center">1</td>
+                                          <td class="text-center">
+                                             10
+                                          </td>
+                                          <td class="text-center">X TBSM 1</td>
+                                          <td>
+                                             Pipiek Mei Widyastuti, S.Pd <br /> 992002220
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 36,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/321" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/321/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/321/321">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/321/321/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/321/321/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">2</td>
+                                          <td class="text-center">
+                                             10
+                                          </td>
+                                          <td class="text-center">X TBSM 2</td>
+                                          <td>
+                                             Yanur Asmorojati, S.Pd <br /> 992002243
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 36,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/322" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/322/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/322/322">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/322/322/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/322/322/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">3</td>
+                                          <td class="text-center">
+                                             10
+                                          </td>
+                                          <td class="text-center">X TKJ 1</td>
+                                          <td>
+                                             Sri Wahyuni, S.Pd <br /> 992002113
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 32,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/319" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/319/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/319/319">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/319/319/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/319/319/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">4</td>
+                                          <td class="text-center">
+                                             10
+                                          </td>
+                                          <td class="text-center">X TKJ 2</td>
+                                          <td>
+                                             Irvan Pratama, S.Kom <br /> 992002248
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 31,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/320" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/320/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/320/320">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/320/320/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/320/320/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">5</td>
+                                          <td class="text-center">
+                                             10
+                                          </td>
+                                          <td class="text-center">X TMP 1</td>
+                                          <td>
+                                             Kiryanto, S.Pd <br /> 196907162007011022
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 26,
+                                             Remidi : 9
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/314" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/314/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/314/314">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/314/314/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/314/314/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">6</td>
+                                          <td class="text-center">
+                                             10
+                                          </td>
+                                          <td class="text-center">X TMP 2</td>
+                                          <td>
+                                             Gunawan Risdiyanto, S.Pd <br /> 992002235
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 29,
+                                             Remidi : 6
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/315" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/315/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/315/315">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/315/315/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/315/315/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">7</td>
+                                          <td class="text-center">
+                                             10
+                                          </td>
+                                          <td class="text-center">X TMP 3</td>
+                                          <td>
+                                             Nanang Triyanto, ST <br /> 992002177
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 26,
+                                             Remidi : 8
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/316" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/316/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/316/316">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/316/316/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/316/316/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">8</td>
+                                          <td class="text-center">
+                                             10
+                                          </td>
+                                          <td class="text-center">X TMP 4</td>
+                                          <td>
+                                             Kurniawan Susanta, S.Pd.T <br /> 992002200
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 30,
+                                             Remidi : 4
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/317" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/317/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/317/317">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/317/317/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/317/317/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">9</td>
+                                          <td class="text-center">
+                                             10
+                                          </td>
+                                          <td class="text-center">X TMP 5</td>
+                                          <td>
+                                             Sriyono, S.Pd <br /> 992002150
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 22,
+                                             Remidi : 11
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/318" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/318/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/318/318">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/318/318/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/318/318/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">10</td>
+                                          <td class="text-center">
+                                             10
+                                          </td>
+                                          <td class="text-center">X TOI 1</td>
+                                          <td>
+                                             Drs. Munandar Wahyudi <br /> 196402041992031008
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 24,
+                                             Remidi : 5
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/312" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/312/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/312/312">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/312/312/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/312/312/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">11</td>
+                                          <td class="text-center">
+                                             10
+                                          </td>
+                                          <td class="text-center">X TOI 2</td>
+                                          <td>
+                                             Drs. Suharno <br /> 992002092
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 25,
+                                             Remidi : 4
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/313" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/313/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/313/313">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/313/313/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/313/313/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">12</td>
+                                          <td class="text-center">
+                                             11
+                                          </td>
+                                          <td class="text-center">XI TBSM 1</td>
+                                          <td>
+                                             Yuliana Astuti, S.Pd <br /> 992002215
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/332" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/332/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/332/332">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/332/332/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/332/332/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">13</td>
+                                          <td class="text-center">
+                                             11
+                                          </td>
+                                          <td class="text-center">XI TBSM 2</td>
+                                          <td>
+                                             Siska Widiyani, S.Pd <br /> 992002229
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/333" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/333/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/333/333">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/333/333/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/333/333/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">14</td>
+                                          <td class="text-center">
+                                             11
+                                          </td>
+                                          <td class="text-center">XI TKJ</td>
+                                          <td>
+                                             Wiwik Yulianti, S.Kom <br /> 992002196
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/323" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/323/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/323/323">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/323/323/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/323/323/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">15</td>
+                                          <td class="text-center">
+                                             11
+                                          </td>
+                                          <td class="text-center">XI TMP 1</td>
+                                          <td>
+                                             Tri Susilowati, S.Pd <br /> 196403162007012008
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/326" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/326/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/326/326">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/326/326/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/326/326/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">16</td>
+                                          <td class="text-center">
+                                             11
+                                          </td>
+                                          <td class="text-center">XI TMP 2</td>
+                                          <td>
+                                             Untung Nugraha, S.Pd <br /> 992002166
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/327" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/327/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/327/327">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/327/327/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/327/327/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">17</td>
+                                          <td class="text-center">
+                                             11
+                                          </td>
+                                          <td class="text-center">XI TMP 3</td>
+                                          <td>
+                                             Jaluh Pertiwi, S.Pd, M.Pd <br /> 992002216
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/328" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/328/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/328/328">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/328/328/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/328/328/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">18</td>
+                                          <td class="text-center">
+                                             11
+                                          </td>
+                                          <td class="text-center">XI TMP 4</td>
+                                          <td>
+                                             Rian Yulianto, S.Pd.I, M.Pd <br /> 992002237
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/329" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/329/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/329/329">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/329/329/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/329/329/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">19</td>
+                                          <td class="text-center">
+                                             11
+                                          </td>
+                                          <td class="text-center">XI TMP 5</td>
+                                          <td>
+                                             Mayta Safitri, S.Pd <br /> 992002218
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/330" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/330/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/330/330">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/330/330/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/330/330/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">20</td>
+                                          <td class="text-center">
+                                             11
+                                          </td>
+                                          <td class="text-center">XI TMP 6</td>
+                                          <td>
+                                             Si Edi Santoso, ST <br /> 992002169
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/331" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/331/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/331/331">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/331/331/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/331/331/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">21</td>
+                                          <td class="text-center">
+                                             11
+                                          </td>
+                                          <td class="text-center">XI TOI 1</td>
+                                          <td>
+                                             Dra. Nur Hidayati, M.Pd.I <br /> 992002101
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/324" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/324/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/324/324">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/324/324/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/324/324/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">22</td>
+                                          <td class="text-center">
+                                             11
+                                          </td>
+                                          <td class="text-center">XI TOI 2</td>
+                                          <td>
+                                             Reny Aftari, S.Pd <br /> 992002201
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/325" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/325/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/325/325">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/325/325/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/325/325/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">23</td>
+                                          <td class="text-center">
+                                             12
+                                          </td>
+                                          <td class="text-center">XII TBSM 1</td>
+                                          <td>
+                                             Danang Triwibowo, ST <br /> 992002209
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/342" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/342/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/342/342">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/342/342/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/342/342/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">24</td>
+                                          <td class="text-center">
+                                             12
+                                          </td>
+                                          <td class="text-center">XII TBSM 2</td>
+                                          <td>
+                                             Aditya Martha Kasih, S.Pd <br /> 992002225
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/343" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/343/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/343/343">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/343/343/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/343/343/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">25</td>
+                                          <td class="text-center">
+                                             12
+                                          </td>
+                                          <td class="text-center">XII TKJ 1</td>
+                                          <td>
+                                             Kuat Mulyadi, S.Kom <br /> 992002226
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/344" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/344/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/344/344">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/344/344/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/344/344/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">26</td>
+                                          <td class="text-center">
+                                             12
+                                          </td>
+                                          <td class="text-center">XII TKJ 2</td>
+                                          <td>
+                                             Lasiyo, S.Pd <br /> 992002223
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/345" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/345/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/345/345">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/345/345/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/345/345/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">27</td>
+                                          <td class="text-center">
+                                             12
+                                          </td>
+                                          <td class="text-center">XII TMP 1</td>
+                                          <td>
+                                             Supriyanto, ST <br /> 992002153
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/336" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/336/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/336/336">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/336/336/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/336/336/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">28</td>
+                                          <td class="text-center">
+                                             12
+                                          </td>
+                                          <td class="text-center">XII TMP 2</td>
+                                          <td>
+                                             Drs. Joko Subroto <br /> 992002172
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/337" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/337/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/337/337">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/337/337/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/337/337/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">29</td>
+                                          <td class="text-center">
+                                             12
+                                          </td>
+                                          <td class="text-center">XII TMP 3</td>
+                                          <td>
+                                             Djoko Darmono, ST <br /> 992002151
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/338" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/338/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/338/338">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/338/338/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/338/338/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">30</td>
+                                          <td class="text-center">
+                                             12
+                                          </td>
+                                          <td class="text-center">XII TMP 4</td>
+                                          <td>
+                                             Tantri Purwanti, S.Pd <br /> 992002164
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/339" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/339/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/339/339">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/339/339/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/339/339/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">31</td>
+                                          <td class="text-center">
+                                             12
+                                          </td>
+                                          <td class="text-center">XII TMP 5</td>
+                                          <td>
+                                             F. Argo Wibowo, S.Pd <br /> 992002134
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/340" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/340/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/340/340">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/340/340/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/340/340/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">32</td>
+                                          <td class="text-center">
+                                             12
+                                          </td>
+                                          <td class="text-center">XII TMP 6</td>
+                                          <td>
+                                             Widodo, S.Pd <br /> 196408042007011008
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/341" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/341/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/341/341">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/341/341/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/341/341/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">33</td>
+                                          <td class="text-center">
+                                             12
+                                          </td>
+                                          <td class="text-center">XII TOI 1</td>
+                                          <td>
+                                             Drs. Sungkono <br /> 992002057
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/334" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/334/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/334/334">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/334/334/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/334/334/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">34</td>
+                                          <td class="text-center">
+                                             12
+                                          </td>
+                                          <td class="text-center">XII TOI 2</td>
+                                          <td>
+                                             Anastasia Anik Pujianti, S.Pd <br /> 992002160
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/335" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/335/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/335/335">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/335/335/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/335/335/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center">35</td>
+                                          <td class="text-center">
+                                             13
+                                          </td>
+                                          <td class="text-center">XIII TOI</td>
+                                          <td>
+                                             Setyo Darmono, S.Si <br /> 992002171
+                                          </td>
+                                          <td class="text-center">
+                                             Tuntas : 0,
+                                             Remidi : 0
+                                          </td>
+                                          <td class="text-center d-none d-xl-block">
+                                             <a href="http://draft.intrabw.net/Raport/346" class="btn btn-sm btn-outline-success">
+                                             <i class="material-icons">group</i> Daftar Siswa
+                                             </a>
+                                             <a href="http://draft.intrabw.net/Raport/346/remidi" class="btn btn-sm btn-outline-danger">
+                                             <i class="material-icons">cached</i> Daftar Remidi
+                                             </a>
+                                          </td>
+                                          <td class="text-center d-none d-md-block d-xl-none">
+                                             <div class="dropdown show">
+                                                <a class="btn btn-sm btn-outline-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/346/346">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">group</i>&nbsp; Siswa
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/346/346/cover">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">insert_drive_file</i>&nbsp; Cover
+                                                   </a>
+                                                   <a class="dropdown-item" href="http://draft.intrabw.net/Raport/346/346/remidi">
+                                                   <i class="material-icons" style="font-size: 1.1rem;">cached</i>&nbsp; Remidi
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <footer class="footer">
+               <div class="container-fluid">
+                  <nav class="float-left">
+                     <ul>
+                        <li>
+                           <a href="#">
+                           Team Binawiyata
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                           Tentang Kami
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                           Blog
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                           Lisensi
+                           </a>
+                        </li>
+                     </ul>
+                  </nav>
+                  <div class="copyright float-right">
+                     &copy;
+                     <script>
+                        document.write(new Date().getFullYear())
+                     </script>, made with <i class="material-icons">favorite</i> by
+                     <a href="#" target="_blank">Fathul Karim</a> for a better web.
+                  </div>
+               </div>
+            </footer>
+         </div>
+      </div>
+      <div class="fixed-plugin">
+         <div class="dropdown show-dropdown">
+            <a href="#" data-toggle="dropdown">
+            <i class="fa fa-cog fa-2x"> </i>
+            </a>
+            <ul class="dropdown-menu">
+               <li class="header-title"> Sidebar Filters</li>
+               <li class="adjustments-line">
+                  <a href="javascript:void(0)" class="switch-trigger active-color">
+                     <div class="badge-colors ml-auto mr-auto">
+                        <span class="badge filter badge-purple" data-color="purple"></span>
+                        <span class="badge filter badge-azure" data-color="azure"></span>
+                        <span class="badge filter badge-green" data-color="green"></span>
+                        <span class="badge filter badge-warning" data-color="orange"></span>
+                        <span class="badge filter badge-danger" data-color="danger"></span>
+                        <span class="badge filter badge-rose active" data-color="rose"></span>
+                     </div>
+                     <div class="clearfix"></div>
+                  </a>
+               </li>
+               <li class="header-title">Sidebar Background</li>
+               <li class="adjustments-line">
+                  <a href="javascript:void(0)" class="switch-trigger background-color">
+                     <div class="ml-auto mr-auto">
+                        <span class="badge filter badge-black" data-background-color="black"></span>
+                        <span class="badge filter badge-white active" data-background-color="white"></span>
+                        <span class="badge filter badge-red" data-background-color="red"></span>
+                     </div>
+                     <div class="clearfix"></div>
+                  </a>
+               </li>
+               <li class="adjustments-line">
+                  <a href="javascript:void(0)" class="switch-trigger">
+                     <p>Sidebar Mini</p>
+                     <label class="ml-auto">
+                        <div class="togglebutton switch-sidebar-mini">
+                     <label>
+                     <input type="checkbox">
+                     <span class="toggle"></span>
+                     </label>
+                     </div>
+                     </label>
+                     <div class="clearfix"></div>
+                  </a>
+               </li>
+               <li class="adjustments-line">
+                  <a href="javascript:void(0)" class="switch-trigger">
+                     <p>Sidebar Images</p>
+                     <label class="switch-mini ml-auto">
+                        <div class="togglebutton switch-sidebar-image">
+                     <label>
+                     <input type="checkbox" checked="">
+                     <span class="toggle"></span>
+                     </label>
+                     </div>
+                     </label>
+                     <div class="clearfix"></div>
+                  </a>
+               </li>
+               <li class="header-title">Images</li>
+               <li class="active">
+                  <a class="img-holder switch-trigger" href="javascript:void(0)">
+                  <img src="http://draft.intrabw.net/assets/img/sidebar-1.jpg" alt="">
+                  </a>
+               </li>
+               <li>
+                  <a class="img-holder switch-trigger" href="javascript:void(0)">
+                  <img src="http://draft.intrabw.net/assets/img/sidebar-2.jpg" alt="">
+                  </a>
+               </li>
+               <li>
+                  <a class="img-holder switch-trigger" href="javascript:void(0)">
+                  <img src="http://draft.intrabw.net/assets/img/sidebar-3.jpg" alt="">
+                  </a>
+               </li>
+               <li>
+                  <a class="img-holder switch-trigger" href="javascript:void(0)">
+                  <img src="http://draft.intrabw.net/assets/img/sidebar-4.jpg" alt="">
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <!--   Core JS Files   -->
+      <script src="http://draft.intrabw.net/assets/js/core/jquery.min.js"></script>
+      <script src="http://draft.intrabw.net/assets/js/core/popper.min.js"></script>
+      <script src="http://draft.intrabw.net/assets/js/core/bootstrap-material-design.min.js"></script>
+      <script src="http://draft.intrabw.net/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+      <!-- Plugin for the momentJs  -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/moment.min.js"></script>
+      <!--  Plugin for Sweet Alert -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/sweetalert2.js"></script>
+      <!-- Forms Validations Plugin -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/jquery.validate.min.js"></script>
+      <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+      <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/bootstrap-selectpicker.js"></script>
+      <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+      <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/jquery.dataTables.min.js"></script>
+      <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/bootstrap-tagsinput.js"></script>
+      <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/jasny-bootstrap.min.js"></script>
+      <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/fullcalendar.min.js"></script>
+      <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+      <!-- <script src="http://draft.intrabw.net/assets/js/plugins/jquery-jvectormap.js"></script> -->
+      <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/nouislider.min.js"></script>
+      <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+      <!-- Library for adding dinamically elements -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/arrive.min.js"></script>
+      <!--  Google Maps Plugin    -->
+      <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Yno10-YTnLjjn_Vtk0V8cdcY5lC4plU"></script> -->
+      <!-- Place this tag in your head or just before your close body tag. -->
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+      <!-- Chartist JS -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/chartist.min.js"></script>
+      <!--  Notifications Plugin    -->
+      <script src="http://draft.intrabw.net/assets/js/plugins/bootstrap-notify.js"></script>
+      <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+      <script src="http://draft.intrabw.net/assets/js/material-dashboard.min.js?v=2.1.0" type="text/javascript"></script>
+      <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+      <script src="http://draft.intrabw.net/assets/demo/demo.js"></script>
+      <script>
+         $(document).ready(function() {
+           $().ready(function() {
+             $sidebar = $('.sidebar');
+             $sidebar_img_container = $sidebar.find('.sidebar-background');
+             $full_page = $('.full-page');
+             $sidebar_responsive = $('body > .navbar-collapse');
+             window_width = $(window).width();
+             fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+             if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
+               if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
+                 $('.fixed-plugin .dropdown').addClass('open');
+               }
+             }
+
+             $('.fixed-plugin a').click(function(event) {
+               // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+               if ($(this).hasClass('switch-trigger')) {
+                 if (event.stopPropagation) {
+                   event.stopPropagation();
+                 } else if (window.event) {
+                   window.event.cancelBubble = true;
+                 }
+               }
+             });
+
+             $('.fixed-plugin .active-color span').click(function() {
+               $full_page_background = $('.full-page-background');
+               $(this).siblings().removeClass('active');
+               $(this).addClass('active');
+               var new_color = $(this).data('color');
+
+               if ($sidebar.length != 0) {
+                 $sidebar.attr('data-color', new_color);
+               }
+
+               if ($full_page.length != 0) {
+                 $full_page.attr('filter-color', new_color);
+               }
+
+               if ($sidebar_responsive.length != 0) {
+                 $sidebar_responsive.attr('data-color', new_color);
+               }
+             });
+
+             $('.fixed-plugin .background-color .badge').click(function() {
+               $(this).siblings().removeClass('active');
+               $(this).addClass('active');
+               var new_color = $(this).data('background-color');
+
+               if ($sidebar.length != 0) {
+                 $sidebar.attr('data-background-color', new_color);
+               }
+             });
+
+             $('.fixed-plugin .img-holder').click(function() {
+               $full_page_background = $('.full-page-background');
+               $(this).parent('li').siblings().removeClass('active');
+               $(this).parent('li').addClass('active');
+
+               var new_image = $(this).find("img").attr('src');
+
+               if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                 $sidebar_img_container.fadeOut('fast', function() {
+                   $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                   $sidebar_img_container.fadeIn('fast');
+                 });
+               }
+
+               if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                 var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+                 $full_page_background.fadeOut('fast', function() {
+                   $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                   $full_page_background.fadeIn('fast');
+                 });
+               }
+
+               if ($('.switch-sidebar-image input:checked').length == 0) {
+                 var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+                 var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+                 $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                 $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+               }
+
+               if ($sidebar_responsive.length != 0) {
+                 $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+               }
+             });
+
+             $('.switch-sidebar-image input').change(function() {
+               $full_page_background = $('.full-page-background');
+
+               $input = $(this);
+
+               if ($input.is(':checked')) {
+                 if ($sidebar_img_container.length != 0) {
+                   $sidebar_img_container.fadeIn('fast');
+                   $sidebar.attr('data-image', '#');
+                 }
+
+                 if ($full_page_background.length != 0) {
+                   $full_page_background.fadeIn('fast');
+                   $full_page.attr('data-image', '#');
+                 }
+
+                 background_image = true;
+               } else {
+                 if ($sidebar_img_container.length != 0) {
+                   $sidebar.removeAttr('data-image');
+                   $sidebar_img_container.fadeOut('fast');
+                 }
+
+                 if ($full_page_background.length != 0) {
+                   $full_page.removeAttr('data-image', '#');
+                   $full_page_background.fadeOut('fast');
+                 }
+
+                 background_image = false;
+               }
+             });
+
+             $('.switch-sidebar-mini input').change(function() {
+               $body = $('body');
+
+               $input = $(this);
+
+               if (md.misc.sidebar_mini_active == true) {
+                 $('body').removeClass('sidebar-mini');
+                 md.misc.sidebar_mini_active = false;
+                 $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+               } else {
+
+                 $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+                 setTimeout(function() {
+                   $('body').addClass('sidebar-mini');
+                   md.misc.sidebar_mini_active = true;
+                 }, 300);
+               }
+
+               // we simulate the window Resize so the charts will get updated in realtime.
+               var simulateWindowResize = setInterval(function() {
+                 window.dispatchEvent(new Event('resize'));
+               }, 180);
+
+               // we stop the simulation of Window Resize after the animations are completed
+               setTimeout(function() {
+                 clearInterval(simulateWindowResize);
+               }, 1000);
+
+             });
+           });
+         });
+      </script>
+      <!-- Sharrre libray -->
+      <script src="http://draft.intrabw.net/assets/demo/jquery.sharrre.js"></script>
+      <script>
+         $(document).ready(function() {
+           // Javascript method's body can be found in http://draft.intrabw.net/assets/js/demos.js
+           md.initDashboardPageCharts();
+
+           // md.initVectorMap();
+
+         });
+      </script>
+      <script>
+         function printDiv(divName){
+                 var printContents = document.getElementById(divName).innerHTML;
+                 var originalContents = document.body.innerHTML;
+                 var originalBackground = document.body.style.backgroundColor;
+                 document.body.innerHTML = printContents;
+                 var all = document.getElementsByClassName("table");
+                 for (var i = 0; i < all.length; i++) { all[i].classList.add("tabel"); } var
+                     all=document.getElementsByClassName("siswa"); for (var i=0; i < all.length; i++) { all[i].classList.add("cetak"); }
+                     document.body.style.backgroundColor="white" ; document.body.style.color="black" ; window.print();
+                     document.body.innerHTML=originalContents; document.body.style.backgroundColor=originalBackground; location.reload();
+                     }
+      </script>
+   </body>
+</html>

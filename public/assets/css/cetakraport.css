@@ -1,0 +1,17 @@
+/* menyembunyikan tombol aksi */
+.action {
+	display: none;
+}
+
+.print h3 {
+	color: solid black !important;
+}
+.clickable {
+    cursor: pointer;
+}
+
+/* memberikan border pada tabel */
+.tabel { color: black !important; border-top: 1px solid #000; border-right: 1px solid black; border-bottom: 1px solid black; }
+.tabel th, .tabel td { font-size: 1em !important; border-color: #000 !important; border-left: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-top: 1px solid black; }
+.cetak td { font-size: 1em !important; color: black !important; }
+.tabel>tbody>tr>td,.tabel>tbody>tr>th,.tabel>tfoot>tr>td,.tabel>tfoot>tr>th,.tabel>thead>tr>td { padding:2px 8px !important; }

@@ -1,0 +1,9 @@
+{
+    "blade.format.enable": true,
+    "emmet.triggerExpansionOnTab": true,
+    "workbench.enableExperiments": false,
+    "editor.formatOnPaste": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Community Material Theme",
+    "workbench.sideBar.location": "right"
+}

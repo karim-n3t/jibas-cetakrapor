@@ -1,0 +1,5 @@
+/* sembunyikan sebelum cetak */
+.tampilcetak {
+	display: none;
+	color: black;
+}
