@@ -17,25 +17,29 @@ Route::get('/', function () {
 Route::get('RaportDraft', function () {
     return view('RaportDraft');
 })->name('RaportDraft');
-Route::get('Raport/Sementara/{kelas}/', 'Raport@cetakrapor')->name('Cetak Rapor Sementara');
-Route::get('Raport/Remidi/{kelas}', 'Raport@tampilremidi')->name('Daftar Siswa Remidi');
-Route::get('Raport/Cover/{kelas}', 'Raport@cetakcover')->name('Cetak Cover Rapor');
-Route::get('Raport/{kelas}/{nis}', 'Raport@tampilrapor')->name('Cetak Raport');
-Route::get('Raport/{kelas}', 'Raport@listsiswa')->name('Daftar Siswa Raport');
-Route::get('Raport', 'Raport@daftarkelas')->name('Daftar Kelas Raport');
-Route::get('PresensiRekap', 'Presensi@rekap')->name('PresensiRekap');
-Route::post('PresensiRekap', 'Presensi@rekap');
-Route::get('PresensiHarian', 'Presensi@harian')->name('PresensiHarian');
-Route::post('PresensiHarian', 'Presensi@harian');
-Route::get('PresensiPersonal', 'Presensi@personal')->name('PresensiPersonal');
-Route::post('PresensiPersonal', 'Presensi@personal');
-Route::post('PresensiPerorangan', 'Presensi@perorangan')->name('PresensiPeroranganPost');
-Route::get('PresensiPerorangan', 'Presensi@perorangan')->name('PresensiPerorangan');
-Route::get('PresensiPerorangan/{nip?}/{tahun?}-{bulan?}', 'Presensi@perorangan');
-Route::get('PresensiPengaturan', 'Presensi@pengaturan')->name('PresensiPengaturan');
-Route::post('PresensiLangsung', 'Presensi@langsung');
-Route::get('PresensiLangsung', 'Presensi@langsung');
-Route::get('PresensiLangsung/{nip?}/{tahun?}-{bulan?}', 'Presensi@langsung');
+Route::prefix('Raport')->group(function () {
+    Route::get('Sementara/{kelas}/', 'Raport@cetakrapor')->name('Cetak Rapor Sementara');
+    Route::get('Remidi/{kelas}', 'Raport@tampilremidi')->name('Daftar Siswa Remidi');
+    Route::get('Cover/{kelas}', 'Raport@cetakcover')->name('Cetak Cover Rapor');
+    Route::get('{kelas}/{nis}', 'Raport@tampilrapor')->name('Cetak Raport');
+    Route::get('{kelas}', 'Raport@listsiswa')->name('Daftar Siswa Raport');
+    Route::get('', 'Raport@daftarkelas')->name('Daftar Kelas Raport');
+});
+Route::prefix('Presensi')->group(function () {
+    Route::get('Rekap', 'Presensi@rekap')->name('PresensiRekap');
+    Route::post('Rekap', 'Presensi@rekap');
+    Route::get('Harian', 'Presensi@harian')->name('PresensiHarian');
+    Route::post('Harian', 'Presensi@harian');
+    Route::get('Personal', 'Presensi@personal')->name('PresensiPersonal');
+    Route::post('Personal', 'Presensi@personal');
+    Route::post('Perorangan', 'Presensi@perorangan')->name('PresensiPeroranganPost');
+    Route::get('Perorangan', 'Presensi@perorangan')->name('PresensiPerorangan');
+    Route::get('Perorangan/{nip?}/{tahun?}-{bulan?}', 'Presensi@perorangan');
+    Route::get('Pengaturan', 'Presensi@pengaturan')->name('PresensiPengaturan');
+    Route::post('Langsung', 'Presensi@langsung');
+    Route::get('Langsung', 'Presensi@langsung');
+    Route::get('Langsung/{nip?}/{tahun?}-{bulan?}', 'Presensi@langsung');
+});
 
 Auth::routes();
 
