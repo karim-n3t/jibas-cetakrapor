@@ -10,7 +10,7 @@ class Presensi extends Controller
 {
     public function pengaturan()
     {
-        $pengaturan = DB::select('SELECT id, bulan, elt(bulan, "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember") AS nama_bulan, tahun, hari_kerja, hari_efektif, jam_pulang, tgl_ttd, DATE_FORMAT(tgl_ttd, "%d-%m-%Y") AS ttds FROM jibasrekap.harikerja ORDER BY id DESC');
+        $pengaturan = DB::connection('mysql2')->select('SELECT id, bulan, elt(bulan, "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember") AS nama_bulan, tahun, hari_kerja, hari_efektif, jam_pulang, tgl_ttd, DATE_FORMAT(tgl_ttd, "%d-%m-%Y") AS ttds FROM jibasrekap.harikerja ORDER BY id DESC');
         return view('PresensiPengaturan', ['pengaturan' => $pengaturan]);
     }
 
@@ -31,7 +31,7 @@ class Presensi extends Controller
         $tanggal_akhir = date("Y-m-t", strtotime($tahun . "-" . $bulan));
 
         // Pengaturan Presensi
-        $pengaturan = DB::select('SELECT id, bulan, ELT(bulan, "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember") AS nama_bulan, tahun, hari_kerja, hari_efektif, jam_pulang, tgl_ttd FROM jibasrekap.harikerja WHERE harikerja.bulan=' . $bulan . ' AND harikerja.tahun=' . $tahun);
+        $pengaturan = DB::connection('mysql2')->select('SELECT id, bulan, ELT(bulan, "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember") AS nama_bulan, tahun, hari_kerja, hari_efektif, jam_pulang, tgl_ttd FROM jibasrekap.harikerja WHERE harikerja.bulan=' . $bulan . ' AND harikerja.tahun=' . $tahun);
 
         if (empty($pengaturan)) {
             $pengaturan = array("bulan" => "", "nama_bulan" => "??", "tahun" => "20??", "hari_kerja" => "26", "hari_efektif" => "22", "jam_pulang" => "15:30:00", "tgl_ttd" => "01-01-2020");
@@ -51,7 +51,7 @@ class Presensi extends Controller
         $jampulangawal = $p->jam_pulang;
         $tanggal_ttd = $p->tgl_ttd;
 
-        $rekap = DB::select('SELECT pegawai.nip, pegawai.nama, IFNULL((SELECT COUNT(jammasuk) FROM jbssdm.presensi WHERE presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS datang, IFNULL((SELECT COUNT(jampulang) FROM jbssdm.presensi WHERE presensi.jampulang!="' . $jampulangawal . '" AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS pulang, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=2 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS ijin, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=3 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS cuti, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=4 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS sakit, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=5 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS alpha, IFNULL((SELECT ijin+cuti+sakit+alpha),0) AS tidakhadir, IFNULL((SELECT SEC_TO_TIME(SUM(TIME_TO_SEC(TIMEDIFF(jampulang, jammasuk)))) FROM jbssdm.presensi WHERE presensi.jampulang!="' . $jampulangawal . '" AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip AND jammasuk IS NOT NULL),0) AS totalwaktukerja, IFNULL ((SELECT TIME_FORMAT(totalwaktukerja, "%H")),0) AS jamkerja, IFNULL ((SELECT FORMAT ((TIME_FORMAT(totalwaktukerja, "%H")/' . $jamkerjatarget . '*100),2)),0) AS persen, IFNULL ((SELECT IF((persen>=100), "Terpenuhi", "Tidak")),0) AS capaian FROM jbssdm.pegawai WHERE pegawai.aktif=1 ORDER BY pegawai.noid;');
+        $rekap = DB::connection('mysql2')->select('SELECT pegawai.nip, pegawai.nama, IFNULL((SELECT COUNT(jammasuk) FROM jbssdm.presensi WHERE presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS datang, IFNULL((SELECT COUNT(jampulang) FROM jbssdm.presensi WHERE presensi.jampulang!="' . $jampulangawal . '" AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS pulang, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=2 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS ijin, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=3 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS cuti, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=4 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS sakit, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=5 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS alpha, IFNULL((SELECT ijin+cuti+sakit+alpha),0) AS tidakhadir, IFNULL((SELECT SEC_TO_TIME(SUM(TIME_TO_SEC(TIMEDIFF(jampulang, jammasuk)))) FROM jbssdm.presensi WHERE presensi.jampulang!="' . $jampulangawal . '" AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip AND jammasuk IS NOT NULL),0) AS totalwaktukerja, IFNULL ((SELECT TIME_FORMAT(totalwaktukerja, "%H")),0) AS jamkerja, IFNULL ((SELECT FORMAT ((TIME_FORMAT(totalwaktukerja, "%H")/' . $jamkerjatarget . '*100),2)),0) AS persen, IFNULL ((SELECT IF((persen>=100), "Terpenuhi", "Tidak")),0) AS capaian FROM jbssdm.pegawai WHERE pegawai.aktif=1 ORDER BY pegawai.noid;');
 
         setlocale(LC_TIME, 'IND');
         return view('PresensiRekap', [
@@ -80,7 +80,7 @@ class Presensi extends Controller
         }
 
         // Pengaturan Presensi
-        $harian = DB::select('SELECT frp.nip, peg.nama, frp.date_in, frp.time_in, frp.time_out, peg.foto FROM jbssat.frpresence frp, jbssdm.pegawai peg WHERE frp.nip = peg.nip AND frp.nip IS NOT NULL AND frp.date_in = "'.$tanggal. '" ORDER BY time_in;');
+        $harian = DB::connection('mysql2')->select('SELECT frp.nip, peg.nama, frp.date_in, frp.time_in, frp.time_out, peg.foto FROM jbssat.frpresence frp, jbssdm.pegawai peg WHERE frp.nip = peg.nip AND frp.nip IS NOT NULL AND frp.date_in = "'.$tanggal. '" ORDER BY time_in;');
 
         setlocale(LC_TIME, 'IND');
         return view('PresensiHarian', [
@@ -112,9 +112,9 @@ class Presensi extends Controller
         $tanggal_akhir = date("Y-m-t", strtotime($tahun . "-" . $bulan));
 
         // Daftar Pegawai
-        $pegawai = DB::select('SELECT replid, nip, nama, noid FROM jbssdm.pegawai WHERE aktif="1" ORDER BY noid');
+        $pegawai = DB::connection('mysql2')->select('SELECT replid, nip, nama, noid FROM jbssdm.pegawai WHERE aktif="1" ORDER BY noid');
         // Pengaturan Presensi
-        $pengaturan = DB::select('SELECT id, bulan, ELT(bulan, "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember") AS nama_bulan, tahun, hari_kerja, hari_efektif, jam_pulang, tgl_ttd FROM jibasrekap.harikerja WHERE harikerja.bulan=' . $bulan . ' AND harikerja.tahun=' . $tahun);
+        $pengaturan = DB::connection('mysql2')->select('SELECT id, bulan, ELT(bulan, "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember") AS nama_bulan, tahun, hari_kerja, hari_efektif, jam_pulang, tgl_ttd FROM jibasrekap.harikerja WHERE harikerja.bulan=' . $bulan . ' AND harikerja.tahun=' . $tahun);
         if (empty($pengaturan)) {
             $pengaturan = array("bulan" => "", "nama_bulan" => "??", "tahun" => "20??", "hari_kerja" => "26", "hari_efektif" => "22", "jam_pulang" => "15:30:00", "tgl_ttd" => "01-01-2020");
             $p = (object) $pengaturan;
@@ -133,10 +133,10 @@ class Presensi extends Controller
         $jampulangawal = $p->jam_pulang;
         $tanggal_ttd = $p->tgl_ttd;
 
-        $rekap = DB::select('SELECT pegawai.nip, pegawai.nama, IFNULL((SELECT COUNT(jammasuk) FROM jbssdm.presensi WHERE presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS datang, IFNULL((SELECT COUNT(jampulang) FROM jbssdm.presensi WHERE presensi.jampulang!="' . $jampulangawal . '" AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS pulang, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=2 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS ijin, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=3 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS cuti, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=4 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS sakit, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=5 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS alpha, IFNULL((SELECT ijin+cuti+sakit+alpha),0) AS tidakhadir, IFNULL((SELECT SEC_TO_TIME(SUM(TIME_TO_SEC(TIMEDIFF(jampulang, jammasuk)))) FROM jbssdm.presensi WHERE presensi.jampulang!="' . $jampulangawal . '" AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip AND jammasuk IS NOT NULL),0) AS totalwaktukerja, IFNULL ((SELECT TIME_FORMAT(totalwaktukerja, "%H jam %i menit")),0) AS jamkerja, IFNULL ((SELECT FORMAT ((TIME_FORMAT(totalwaktukerja, "%H")/' . $jamkerjatarget . '*100),2)),0) AS persen, IFNULL ((SELECT IF((persen>=100), "Terpenuhi", "Tidak")),0) AS capaian FROM jbssdm.pegawai WHERE pegawai.nip="' . $nip . '"');
+        $rekap = DB::connection('mysql2')->select('SELECT pegawai.nip, pegawai.nama, IFNULL((SELECT COUNT(jammasuk) FROM jbssdm.presensi WHERE presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS datang, IFNULL((SELECT COUNT(jampulang) FROM jbssdm.presensi WHERE presensi.jampulang!="' . $jampulangawal . '" AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS pulang, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=2 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS ijin, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=3 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS cuti, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=4 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS sakit, IFNULL((SELECT COUNT(status) FROM jbssdm.presensi WHERE presensi.status=5 AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip),0) AS alpha, IFNULL((SELECT ijin+cuti+sakit+alpha),0) AS tidakhadir, IFNULL((SELECT SEC_TO_TIME(SUM(TIME_TO_SEC(TIMEDIFF(jampulang, jammasuk)))) FROM jbssdm.presensi WHERE presensi.jampulang!="' . $jampulangawal . '" AND presensi.tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" AND  pegawai.nip=presensi.nip AND jammasuk IS NOT NULL),0) AS totalwaktukerja, IFNULL ((SELECT TIME_FORMAT(totalwaktukerja, "%H jam %i menit")),0) AS jamkerja, IFNULL ((SELECT FORMAT ((TIME_FORMAT(totalwaktukerja, "%H")/' . $jamkerjatarget . '*100),2)),0) AS persen, IFNULL ((SELECT IF((persen>=100), "Terpenuhi", "Tidak")),0) AS capaian FROM jbssdm.pegawai WHERE pegawai.nip="' . $nip . '"');
 
         // Presensi Perorangan
-        $perorangan = DB::select('SELECT replid, nip, ELT((DAYOFWEEK(tanggal)), "Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu") AS hari,  tanggal, DATE_FORMAT(tanggal, "%d/%m/%Y") AS tanggals, jammasuk, jampulang, IF(jampulang!="' . $jampulangawal . '", jampulang, NULL) AS jampulangfix, SEC_TO_TIME(TIME_TO_SEC(TIMEDIFF(jampulang, jammasuk))) AS jumlahjam, IF(jampulang="15:30:00",NULL,(SELECT jumlahjam)) AS jumlahjamfix, (SELECT TIME_FORMAT(jumlahjamfix, "%H jam %i menit")) AS waktukerja, status, ELT(STATUS, "Hadir", "Izin", "Cuti", "Sakit", "Alpha") AS statuss,  keterangan, source FROM jbssdm.presensi WHERE nip="' . $nip . '" AND tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" ORDER BY tanggal');
+        $perorangan = DB::connection('mysql2')->select('SELECT replid, nip, ELT((DAYOFWEEK(tanggal)), "Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu") AS hari,  tanggal, DATE_FORMAT(tanggal, "%d/%m/%Y") AS tanggals, jammasuk, jampulang, IF(jampulang!="' . $jampulangawal . '", jampulang, NULL) AS jampulangfix, SEC_TO_TIME(TIME_TO_SEC(TIMEDIFF(jampulang, jammasuk))) AS jumlahjam, IF(jampulang="15:30:00",NULL,(SELECT jumlahjam)) AS jumlahjamfix, (SELECT TIME_FORMAT(jumlahjamfix, "%H jam %i menit")) AS waktukerja, status, ELT(STATUS, "Hadir", "Izin", "Cuti", "Sakit", "Alpha") AS statuss,  keterangan, source FROM jbssdm.presensi WHERE nip="' . $nip . '" AND tanggal BETWEEN "' . $tanggal_awal . '" AND "' . $tanggal_akhir . '" ORDER BY tanggal');
         $route = Route::currentRouteName();
 
         setlocale(LC_TIME, 'IND');
@@ -176,9 +176,9 @@ class Presensi extends Controller
         $hari = date("w")+1;
 
         // Daftar Pegawai
-        $pegawai = DB::select('SELECT replid, nip, nama, noid FROM jbssdm.pegawai WHERE aktif="1" ORDER BY noid');
-        $jadwals = DB::select('SELECT * FROM jbssat.frjadwalsekolah WHERE kelompok=1 AND hari='.$hari.';');
-        $personal = DB::select('SELECT * FROM jbssdm.pegawai WHERE nip='.$nip.' AND aktif="1";');
+        $pegawai = DB::connection('mysql2')->select('SELECT replid, nip, nama, noid FROM jbssdm.pegawai WHERE aktif="1" ORDER BY noid');
+        $jadwals = DB::connection('mysql2')->select('SELECT * FROM jbssat.frjadwalsekolah WHERE kelompok=1 AND hari='.$hari.';');
+        $personal = DB::connection('mysql2')->select('SELECT * FROM jbssdm.pegawai WHERE nip='.$nip.' AND aktif="1";');
 
 
 
