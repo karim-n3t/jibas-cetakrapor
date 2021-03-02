@@ -1,141 +1,105 @@
-@extends('layouts.auth')
+@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'register', 'title' => __('Material Dashboard')])
 
 @section('content')
-<div class="container">
-<div class="row">
-    <div class="col-md-10 ml-auto mr-auto">
-    <div class="card card-signup">
-        <h2 class="card-title text-center">{{ __('Register') }}</h2>
-        <div class="card-body">
-        <div class="row">
-            <div class="col-md-5 ml-auto">
-            <div class="info info-horizontal">
-                <div class="icon icon-rose">
-                <i class="material-icons">timeline</i>
-                </div>
-                <div class="description">
-                <h4 class="info-title">Marketing</h4>
-                <p class="description">
-                    We've created the marketing campaign of the website. It was a very interesting collaboration.
-                </p>
-                </div>
-            </div>
-            <div class="info info-horizontal">
-                <div class="icon icon-primary">
-                <i class="material-icons">code</i>
-                </div>
-                <div class="description">
-                <h4 class="info-title">Fully Coded in HTML5</h4>
-                <p class="description">
-                    We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub.
-                </p>
-                </div>
-            </div>
-            <div class="info info-horizontal">
-                <div class="icon icon-info">
-                <i class="material-icons">group</i>
-                </div>
-                <div class="description">
-                <h4 class="info-title">Built Audience</h4>
-                <p class="description">
-                    There is also a Fully Customizable CMS Admin Dashboard for this product.
-                </p>
-                </div>
-            </div>
-            </div>
-            <div class="col-md-5 mr-auto">
-            <div class="social text-center">
-                <button class="btn btn-just-icon btn-round btn-twitter">
+<div class="container" style="height: auto;">
+  <div class="row align-items-center">
+    <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+      <form class="form" method="POST" action="{{ route('register') }}">
+        @csrf
+
+        <div class="card card-login card-hidden mb-3">
+          <div class="card-header card-header-primary text-center">
+            <h4 class="card-title"><strong>{{ __('Register') }}</strong></h4>
+            <div class="social-line">
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                <i class="fa fa-facebook-square"></i>
+              </a>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
                 <i class="fa fa-twitter"></i>
-                </button>
-                <button class="btn btn-just-icon btn-round btn-dribbble">
-                <i class="fa fa-dribbble"></i>
-                </button>
-                <button class="btn btn-just-icon btn-round btn-facebook">
-                <i class="fa fa-facebook"> </i>
-                </button>
-                <h4 class="mt-3"> or be classical </h4>
+              </a>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                <i class="fa fa-google-plus"></i>
+              </a>
             </div>
-            <form method="POST" action="{{ route('register') }}">
-                @csrf
-                <div class="form-group has-default">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <i class="material-icons">face</i>
-                    </span>
-                    </div>
-                    <input id="name" type="text" placeholder="{{ __('Name') }}" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                    @error('name')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+          </div>
+          <div class="card-body ">
+            <p class="card-description text-center">{{ __('Or Be Classical') }}</p>
+            <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                  </span>
                 </div>
+                <input type="text" name="name" class="form-control" placeholder="{{ __('Name...') }}" value="{{ old('name') }}" required>
+              </div>
+              @if ($errors->has('name'))
+                <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
+                  <strong>{{ $errors->first('name') }}</strong>
                 </div>
-                <div class="form-group has-default">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <i class="material-icons">mail</i>
-                    </span>
-                    </div>
-                    <input id="email" type="email" placeholder="{{ __('E-Mail Address') }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                    @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-                </div>
-                <div class="form-group has-default">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <i class="material-icons">lock_outline</i>
-                    </span>
-                    </div>
-                    <input id="password" type="password" placeholder="{{ __('Password') }}" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                    @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-                </div>
-                <div class="form-group has-default">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <i class="material-icons">lock_outline</i>
-                    </span>
-                    </div>
-                    <input id="password-confirm" type="password" placeholder="{{ __('Confirm Password') }}" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                </div>
-                </div>
-                <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value="" checked="">
-                    <span class="form-check-sign">
-                    <span class="check"></span>
-                    </span>
-                    I agree to the
-                    <a href="#something">terms and conditions</a>.
-                </label>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary">
-                        {{ __('Register') }}
-                    </button>
-                </div>
-            </form>
+              @endif
             </div>
+            <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }} mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">email</i>
+                  </span>
+                </div>
+                <input type="email" name="email" class="form-control" placeholder="{{ __('Email...') }}" value="{{ old('email') }}" required>
+              </div>
+              @if ($errors->has('email'))
+                <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
+                  <strong>{{ $errors->first('email') }}</strong>
+                </div>
+              @endif
+            </div>
+            <div class="bmd-form-group{{ $errors->has('password') ? ' has-danger' : '' }} mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password...') }}" required>
+              </div>
+              @if ($errors->has('password'))
+                <div id="password-error" class="error text-danger pl-3" for="password" style="display: block;">
+                  <strong>{{ $errors->first('password') }}</strong>
+                </div>
+              @endif
+            </div>
+            <div class="bmd-form-group{{ $errors->has('password_confirmation') ? ' has-danger' : '' }} mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Confirm Password...') }}" required>
+              </div>
+              @if ($errors->has('password_confirmation'))
+                <div id="password_confirmation-error" class="error text-danger pl-3" for="password_confirmation" style="display: block;">
+                  <strong>{{ $errors->first('password_confirmation') }}</strong>
+                </div>
+              @endif
+            </div>
+            <div class="form-check mr-auto ml-3 mt-3">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" id="policy" name="policy" {{ old('policy', 1) ? 'checked' : '' }} >
+                <span class="form-check-sign">
+                  <span class="check"></span>
+                </span>
+                {{ __('I agree with the ') }} <a href="#">{{ __('Privacy Policy') }}</a>
+              </label>
+            </div>
+          </div>
+          <div class="card-footer justify-content-center">
+            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('Create account') }}</button>
+          </div>
         </div>
-        </div>
+      </form>
     </div>
-    </div>
-</div>
+  </div>
 </div>
 @endsection
